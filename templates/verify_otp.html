@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='image/icot.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_I2.css') }}">
+    <title>Verify OTP Admin</title>
+</head>
+<body>
+    <div class="box">
+    <h1>Verify OTP</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <form method="POST" action="/verify-otp/{{ username }}">
+        <input type="text" name="otp" placeholder="Enter OTP" required><br>
+        <button type="submit">Verify</button>
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='image/icot.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Vcount</title>
+</head>
+<body>
+    <h1>Webservice V-count</h1>
+    <form action="{{ url_for('set_video_feed') }}" method="post">
+        <label for="video_path">Pilih sumber video:</label>
+        <select name="video_path" id="video_path">
+            <option value="" disabled selected>Klik disini</option>
+            <option value="0">Webcam</option>
+            <option value="1">Video Lokal</option>
+            <option value="2">IP Camera</option>
+        </select>
+        <br>
+        <button type="submit" value="Submit">SUBMIT</button>
+    </form>
+    <br>
+    <img src="{{ url_for('video_feed') }}" width="640" height="480">
+    <div id="counter"></div>
+    <!-- Tombol logout -->
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <!--script src="https://code.jquery.com/jquery-3.6.0.min.js"></script-->
+    <!--script type="text/javascript" src="{{ url_for('static', filename='js/jquarytodr.js') }}"></script-->
+</body>
+</html>
+    

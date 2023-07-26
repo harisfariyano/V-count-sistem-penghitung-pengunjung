@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='icon' href="{{ url_for('static', filename='image/icot.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_L.css') }}">
+    <title>Daftar Admin</title>
+</head>
+<body>
+    <div class="box">
+        <h1>Daftar</h1>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+        <form method="POST" action="/register">
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <button type="submit">Daftar</button>
+            <p>sudah mempunyai akun ?
+            <br>
+            <a href="/login">Silahkan Masuk</a></p>
+        </form>
+    </div>
+</body>
+</html>
